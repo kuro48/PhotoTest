@@ -6,4 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
+class Photo: Object {
+    @objc dynamic var photoName = ""
+    @objc dynamic var fileName = ""
+}
