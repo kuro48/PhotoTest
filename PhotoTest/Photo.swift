@@ -5,7 +5,7 @@
 //  Created by 黒川龍之介 on 2023/01/12.
 //
 
-import Foundation
+import UIKit
 import RealmSwift
 
 class Photo: Object {

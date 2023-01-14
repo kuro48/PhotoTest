@@ -30,24 +30,28 @@ class LoadViewController: UIViewController {
         //テキストフィールドで入力した名前をRealm上で検索
         name = textField.text
         let findPhoto = realm.objects(Photo.self).filter("photoName == %@", name!)
+        print("aaa")
         print(findPhoto)
         
         //URL型にキャスト
-        let fileURL = URL(string: findPhoto.fileName)
+        let fileURL = URL(string: findPhoto[0].fileName)
+        print(fileURL)
         //パス型へ変換
-        let path = fileURL?.path
+        let FilePath = fileURL?.path
+        print(FilePath)
         
-        if FileManager.default.fileExists(atPath: path!) {
-            if let imageData = UIImage(contentsOfFile: path!) {
+        if FileManager.default.fileExists(atPath: FilePath!) {
+            
+            if let imageData = UIImage(contentsOfFile: FilePath!) {
                 imageView.image = imageData
-            }
-            else {
+            }else {
                 print("Failed to load the image.")
             }
-        }
-        else {
+            
+        }else {
             print("Image file not found.")
         }
+        
     }
 /*
  // MARK: - Navigation

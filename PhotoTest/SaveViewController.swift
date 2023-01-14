@@ -5,6 +5,9 @@
 //  Created by 黒川龍之介 on 2023/01/12.
 //
 
+//参考記事　写真のアプリ（https://softmoco.com/basics/swift-how-to-save-image-file-to-document-directory.php）
+//パスをRealmに保存する処理（https://zenn.dev/kazushino/articles/90bafb36f07fb2）
+
 import UIKit
 import RealmSwift
 
