@@ -37,12 +37,14 @@ class LoadViewController: UIViewController {
         let fileURL = URL(string: findPhoto[0].fileName)
         print(fileURL)
         //パス型へ変換
-        let FilePath = fileURL?.path
-        print(FilePath)
+        let filePath = fileURL?.path
+        print(filePath)
+        print(type(of: filePath))
         
-        if FileManager.default.fileExists(atPath: FilePath!) {
+        //このしたで上手くファイルが取得できてないっぽい、、、
+        if FileManager.default.fileExists(atPath: filePath!) {
             
-            if let imageData = UIImage(contentsOfFile: FilePath!) {
+            if let imageData = UIImage(contentsOfFile: filePath!) {
                 imageView.image = imageData
             }else {
                 print("Failed to load the image.")
