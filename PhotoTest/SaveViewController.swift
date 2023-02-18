@@ -43,6 +43,7 @@ class SaveViewController: UIViewController {
             alert.addAction(ok)
             present(alert, animated: true, completion: nil)
         }else{
+            saveImage()
             photo.photoName = imageName
             do {
                 try photo.fileName = directoryFileURL.absoluteString
@@ -53,7 +54,7 @@ class SaveViewController: UIViewController {
                 alert.addAction(ok)
                 present(alert, animated: true, completion: nil)
             }
-            saveImage()
+            
             //Realmへの保存
             try! realm.write {
                 realm.add(photo)
